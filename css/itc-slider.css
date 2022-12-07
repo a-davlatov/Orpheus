@@ -14,6 +14,18 @@
 .itc-slider__wrapper {
   overflow: hidden;
   max-height: 350px;
+  position: relative;
+}
+
+.itc-slider__wrapper::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: inherit;
   background: linear-gradient(270deg, #050607 8.15%, rgba(5, 6, 7, 0) 32.04%);
 }
 
@@ -28,6 +40,7 @@
 }
 
 .itc-slider__item {
+  padding-left: 25px;
   flex: 0 0 33.3333333333%;
   max-width: 33.3333333333%;
   user-select: none;
