@@ -25,10 +25,10 @@
 					<!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
 				<nav class="nav" id="nav">
-					<a class="nav__link" href="#" data-scroll="intro">Works</a>
-					<a class="nav__link" href="#" data-scroll="about">Contribution</a>
-					<a class="nav__link" href="#" data-scroll="ingredients">Community</a>
-					<a class="nav__link" href="#" data-scroll="menu">Get in Touch</a>
+					<a class="nav__link" href="#" data-scroll="works">Works</a>
+					<a class="nav__link" href="#" data-scroll="contribution">Contribution</a>
+					<a class="nav__link" href="#" id="community">Community</a>
+					<a class="nav__link" href="#" data-scroll="contact-us">Get in Touch</a>
                     <button class="switch-mode"></button>
 				</nav>
 
@@ -40,7 +40,7 @@
 	</header>
 
     <!-- Intro -->
-    <section class="intro">
+    <section class="intro" id="intro">
         <div class="container">
             <div class="intro__inner">
                 <div class="intro__content">
@@ -67,7 +67,7 @@
     </section>
 
     <!-- Recent -->
-    <div class="recent">
+    <div class="recent" id="works">
         <div class="container">
             <div class="recent__inner">
                 <div class="section__info section__info--recent">
@@ -106,7 +106,7 @@
     </div>
 
     <!-- Statue -->
-    <section class="statue">
+    <section class="statue" id="contribution">
         <div class="container">
             <div class="section__info">
                 <div class="section__suptitle">Contribution</div>
@@ -147,7 +147,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" id="contact-us">
         <div class="container">
             <div class="footer__inner">
                 <div class="section__suptitle">Let’s Connect</div>
@@ -172,6 +172,17 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="modal_response">
+		<div class="modal__dialog">
+			<button class="modal__close">
+				<img src="./img/cancel.png" alt="">
+			</button>
+			<h1 class="modal__title">We are sorry</h1>
+			<div class="modal__subtitle">That page is not available now, try later please.</div>
+		</div>
+	</div>
 
     <script src="js/itc-slider.min.js"></script>
     <script src="js/script.js"></script>

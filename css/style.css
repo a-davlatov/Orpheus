@@ -4,6 +4,11 @@ body {
     font-size: 30px;
     color: #EFF3FB;
     background: #121416;
+    /* transition: all .6s cubic-bezier(.25, .46, .45, .94); */
+}
+
+body.no-scroll {
+    overflow: hidden;
 }
 
 *,
@@ -159,7 +164,7 @@ h6 {
     z-index: 1000;
     transform-origin: top center;
     border-bottom: 1px solid #101822;
-    transition: transform .6s cubic-bezier(.25, .46, .45, .94), background-color .5s cubic-bezier(.25, .46, .45, .94);
+    transition: transform .6s cubic-bezier(.25, .46, .45, .94);
 }
 
 .header.hide {
@@ -167,8 +172,9 @@ h6 {
 }
 
 .header.fixed {
+    padding: 20px 0;
     position: fixed;
-    background: #fff;
+    background: inherit;
 }
 
 .header__inner {
@@ -595,6 +601,7 @@ h6 {
 
 .statue__photo--avatars {
     width: 55%;
+    background: none;
 }
 
 .statue__photo--avatars>img {
@@ -649,4 +656,80 @@ h6 {
 
 .socials__link+.socials__link {
     margin-left: 32px;
+}
+
+.modal {
+    padding: 1rem;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+    background-color: rgba(0, 0, 0, .6);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal__dialog {
+    margin: auto;
+    width: 100%;
+    height: 590px;
+    max-width: 860px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.modal__title {
+    padding: 0 1rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-family: inherit;
+    color: inherit;
+}
+
+.modal__subtitle {
+    padding: 0.66rem 1rem 2.5rem;
+    font-size: 1.06rem;
+    font-family: inherit;
+    color: inherit;
+}
+
+.modal__close {
+    width: 25px;
+    height: 25px;
+    padding: 0;
+
+    background: none;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+    
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 2;
+
+    transition: transform .2s linear;
+}
+
+.modal__close:hover {
+    transform: rotate(90deg);
+}
+.modal__close:focus {
+    outline: none;
 }
