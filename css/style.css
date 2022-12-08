@@ -143,6 +143,19 @@ h6 {
     color: rgba(8, 10, 13, 1);
 }
 
+.light-mode .modal {
+    background-color: rgba(255, 255, 255, .6);
+}
+
+.light-mode .modal__dialog {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.light-mode .modal__close {
+    background-image: url('../img/cancel-light.png');
+    background-size: cover;
+}
+
 /* Container 
 ===============*/
 
@@ -718,18 +731,20 @@ h6 {
     border: none;
     overflow: hidden;
     cursor: pointer;
-    
+
     position: absolute;
     top: 1.5rem;
     right: 2rem;
     z-index: 2;
 
     transition: transform .2s linear;
+    background-image: url('../img/cancel.png');
 }
 
 .modal__close:hover {
     transform: rotate(90deg);
 }
+
 .modal__close:focus {
     outline: none;
 }

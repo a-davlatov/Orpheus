@@ -5,37 +5,37 @@ const bodyEl = document.body
 const headerEl = document.querySelector('#header')
 const introEl = document.querySelector('#intro')
 const burgerEl = document.querySelector('#burger')
-let introElH = introEl.clientHeight;
-const defaultOffset = introElH;
+let introElH = introEl.clientHeight
+const defaultOffset = introElH
 
-const scrollPosition = () => window.pageXOffset || document.documentElement.scrollTop;
-const containHide = () => headerEl.classList.contains('hide');
+const scrollPosition = () => window.pageXOffset || document.documentElement.scrollTop
+const containHide = () => headerEl.classList.contains('hide')
 
 // Fixed header
 window.addEventListener('scroll', () => {
 
     if (scrollPosition() > lastScroll && !containHide() && scrollPosition() > defaultOffset) {
         //scroll down
-        headerEl.classList.add('hide');
+        headerEl.classList.add('hide')
     } else if (scrollPosition() < lastScroll && containHide()) {
         //scroll up
-        headerEl.classList.remove('hide');
-        headerEl.classList.add('fixed');
+        headerEl.classList.remove('hide')
+        headerEl.classList.add('fixed')
     } else if (scrollPosition() < defaultOffset) {
-        headerEl.classList.remove('fixed');
+        headerEl.classList.remove('fixed')
     }
 
-    lastScroll = scrollPosition();
-});
+    lastScroll = scrollPosition()
+})
 
 // Smooth scroll
 const navLinks = document.querySelectorAll('[data-scroll]');
 navLinks.forEach((el) => {
     el.addEventListener('click', (evt) => {
-        evt.preventDefault();
+        evt.preventDefault()
 
-        const elementId = el.dataset.scroll;
-        const elementOffset = document.getElementById(elementId).offsetTop;
+        const elementId = el.dataset.scroll
+        const elementOffset = document.getElementById(elementId).offsetTop
 
         // burgerEl.classList.remove('clicked');
         // headerEl.classList.remove('show');
@@ -45,41 +45,47 @@ navLinks.forEach((el) => {
             window.scrollTo({
                 top: elementOffset - 56,
                 behavior: 'smooth'
-            });
-            return;
+            })
+            return
         }
 
         window.scrollTo({
             top: elementOffset,
             behavior: 'smooth'
-        });
-    });
-});
+        })
+    })
+})
 
+// Show modal
 const responseModalEl= document.querySelector('#modal_response')
 const closeModalEl = document.querySelector('.modal__close')
-const communityLink = document.querySelector('#community')
+const responseMsg = document.querySelectorAll('.response-msg')
 
-communityLink.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    responseModalEl.classList.add('show');
-    bodyEl.classList.add('no-scroll');
-});
+function modalToggle(event) {
+    event.preventDefault()
+    responseModalEl.classList.toggle('show')
+    bodyEl.classList.toggle('no-scroll')
+}
+
+responseMsg.forEach((el) => {
+    el.addEventListener('click', (evt) => {
+        modalToggle(evt)
+    })
+})
+
 closeModalEl.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    responseModalEl.classList.remove('show');
-    bodyEl.classList.remove('no-scroll');
-});
+    modalToggle(evt)
+})
 responseModalEl.addEventListener('click', (evt) => {
-    evt.preventDefault();
-    responseModalEl.classList.remove('show');
-    bodyEl.classList.remove('no-scroll');
-});
+    modalToggle(evt)
+})
 
 document.querySelector('.modal__dialog').addEventListener('click', (evt) => {
-    evt.stopPropagation();
-});
+    evt.stopPropagation()
+})
 
+
+// Switch mode
 function lightMode() {
     const wasLightMode = localStorage.getItem('lightMode') === 'true'
 
