@@ -1,8 +1,9 @@
 'use strict'
 
-let lastScroll = 0;
+let lastScroll = 0
 const bodyEl = document.body
 const headerEl = document.querySelector('#header')
+const navEl = document.querySelector('#nav')
 const introEl = document.querySelector('#intro')
 const burgerEl = document.querySelector('#burger')
 let introElH = introEl.clientHeight
@@ -37,9 +38,9 @@ navLinks.forEach((el) => {
         const elementId = el.dataset.scroll
         const elementOffset = document.getElementById(elementId).offsetTop
 
-        // burgerEl.classList.remove('clicked');
-        // headerEl.classList.remove('show');
-        // bodyEl.classList.remove('no-scroll');
+        burgerEl.classList.remove('active');
+        navEl.classList.remove('show');
+        bodyEl.classList.remove('no-scroll');
 
         if (window.innerWidth <= 414) {
             window.scrollTo({
@@ -55,6 +56,15 @@ navLinks.forEach((el) => {
         })
     })
 })
+
+// Nav toggle
+burgerEl.addEventListener('click', (evt) => {
+    evt.preventDefault();
+    burgerEl.classList.toggle('active')
+    navEl.classList.toggle('show')
+    bodyEl.classList.toggle('no-scroll')
+});
+
 
 // Show modal
 const responseModalEl= document.querySelector('#modal_response')
