@@ -901,6 +901,10 @@ h6 {
         margin-bottom: 20px;
     }
 
+    .nav__link::after {
+        display: none;
+    }
+
     /* Burger */
     .burger {
         display: block;
@@ -1005,6 +1009,7 @@ h6 {
     .intro__title span:first-child {
         font-size: 35px;
     }
+
     .intro__title span:last-child {
         font-size: 30px;
     }
@@ -1092,7 +1097,7 @@ h6 {
         margin-left: 20px;
     }
 
-    .socials__link > img {
+    .socials__link>img {
         width: 30px;
         height: 30px;
     }

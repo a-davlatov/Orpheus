@@ -40,7 +40,6 @@ navLinks.forEach((el) => {
 
         burgerEl.classList.remove('active');
         navEl.classList.remove('show');
-        bodyEl.classList.remove('no-scroll');
 
         if (window.innerWidth <= 414) {
             window.scrollTo({
@@ -62,7 +61,6 @@ burgerEl.addEventListener('click', (evt) => {
     evt.preventDefault();
     burgerEl.classList.toggle('active')
     navEl.classList.toggle('show')
-    bodyEl.classList.toggle('no-scroll')
 });
 
 
@@ -101,6 +99,8 @@ function lightMode() {
 
     localStorage.setItem('lightMode', !wasLightMode)
     bodyEl.classList.toggle('light-mode', !wasLightMode)
+    burgerEl.classList.toggle('active')
+    navEl.classList.toggle('show')
 }
 
 document.querySelector('.switch-mode').addEventListener('click', lightMode)
