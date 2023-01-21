@@ -107,6 +107,9 @@ document.querySelector('.switch-mode').addEventListener('click', lightMode)
 
 function onLoad() {
     bodyEl.classList.toggle('light-mode', localStorage.getItem('lightMode') === 'true')
+    setTimeout(() => {
+        document.querySelector('.preloader').style.display = 'none'
+    }, 1000)
 }
 document.addEventListener('DOMContentLoaded', onLoad)
 
