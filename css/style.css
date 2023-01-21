@@ -52,7 +52,7 @@ h6 {
 }
 
 .light-mode .header__logo {
-    background: url('../img/LogoBlack.png') center no-repeat;
+    background: url('../img/LogoBlack.webp') center no-repeat;
 }
 
 .light-mode .intro__title {
@@ -97,7 +97,7 @@ h6 {
 }
 
 .light-mode .intro__photo {
-    background: url('../img/intro/intro_photo_light.png');
+    background: url('../img/intro/intro_photo_light.webp');
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -118,7 +118,7 @@ h6 {
 }
 
 .light-mode .statue__photo {
-    background: url('../img/statue/statue-light.png');
+    background: url('../img/statue/statue-light.webp');
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -152,7 +152,7 @@ h6 {
 }
 
 .light-mode .modal__close {
-    background-image: url('../img/cancel-light.png');
+    background-image: url('../img/cancel-light.webp');
     background-size: cover;
 }
 
@@ -204,7 +204,9 @@ h6 {
     text-decoration: none;
     width: 164px;
     height: 45px;
-    background: url('../img/logo.png') center no-repeat;
+    font-size: 0;
+    color: transparent;
+    background: url('../img/logo.webp') center no-repeat;
 }
 
 /* Burger
@@ -287,6 +289,8 @@ h6 {
     position: relative;
     width: 29px;
     height: 29px;
+    font-size: 0;
+    color: transparent;
     border: none;
     cursor: pointer;
     display: inline-block;
@@ -403,7 +407,7 @@ h6 {
 }
 
 .intro__photo {
-    background: url('../img/intro/intro_photo.png');
+    background: url('../img/intro/intro_photo.webp');
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -496,7 +500,7 @@ h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../img/intro/btn_border.png') center no-repeat;
+    background: url('../img/intro/btn_border.webp') center no-repeat;
     background-size: contain;
 }
 
@@ -510,11 +514,11 @@ h6 {
     width: 19px;
     height: 18px;
     display: inline-block;
-    background: url('../img/statue/download.png');
+    background: url('../img/statue/download.webp');
 }
 
 .light-mode .btn--gold>span {
-    background: url('../img/statue/download-light.png');
+    background: url('../img/statue/download-light.webp');
 }
 
 .btn--gold img {
@@ -705,7 +709,7 @@ h6 {
 
 .statue__photo {
     width: 60%;
-    background: url('../img/statue/statue.png');
+    background: url('../img/statue/statue.webp');
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -847,7 +851,7 @@ h6 {
     z-index: 2;
 
     transition: transform .2s linear;
-    background-image: url('../img/cancel.png');
+    background-image: url('../img/cancel.webp');
 }
 
 .modal__close:hover {
